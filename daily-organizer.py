@@ -60,3 +60,28 @@ class OpenTodaysNoteCommand(sublime_plugin.WindowCommand):
         note_file_path = get_todays_note_file_path()
         create_note_file(note_file_path)
         todays_note = self.window.open_file(note_file_path)
+
+### This is a hack to work around the API of show_input_panel where the on_done callback
+### only accepts a single input string. Still looking for a better way to come back to the
+### same command object to complete the creation of the meeting file
+new_meeting_obj = None
+
+def got_meeting_file_name(file_name):
+    global new_meeting_obj
+    new_meeting_obj.create_meeting_file(file_name)
+    new_meeting_obj = None
+
+def cancel_meeting_file_name():
+    new_meeting_obj = None
+
+class NewMeetingNoteCommand(sublime_plugin.WindowCommand):
+    def run(self):
+        global new_meeting_obj
+        new_meeting_obj = self
+        meeting_file_name_panel = self.window.show_input_panel(
+            "Meeting File Name", "", got_meeting_file_name, None, cancel_meeting_file_name)
+
+    def create_meeting_file(self, file_name):
+        meeting_file_path = (get_current_folder() + "/" + file_name)
+        create_note_file(meeting_file_path)
+        meeting_note = self.window.open_file(meeting_file_path)

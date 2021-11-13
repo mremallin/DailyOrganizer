@@ -2,5 +2,9 @@
     {
         "caption": "DailyOrganizer: Open Today's Note",
         "command": "open_todays_note"
+    },
+    {
+        "caption": "DailyOrganizer: Create a new meeting minutes note",
+        "command": "new_meeting_note"
     }
 ]
