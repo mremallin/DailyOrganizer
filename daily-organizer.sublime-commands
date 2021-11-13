@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "DailyOrganizer: Open Today's Note",
+        "command": "open_todays_note"
+    }
+]
