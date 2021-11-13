@@ -26,7 +26,7 @@ def singleton(orig_cls):
 @singleton
 class DailyOrganizerConfig():
     def __init__(self):
-        self.settings = sublime.load_settings("daily-organizer.sublime_settings")
+        self.settings = sublime.load_settings("daily-organizer.sublime-settings")
 
     def get_folder_structure(self):
         return self.settings.get("folder_structure", "~/DailyOrganizer/%Y/%m/%d")
@@ -36,20 +36,19 @@ class DailyOrganizerConfig():
 
 def create_folder(folder):
     if not os.path.exists(folder):
-        print("Creating " + folder)
+        print("Creating notes folder:" + folder)
         os.makedirs(folder)
 
 def get_current_folder():
     folder_path = datetime.now().strftime(DailyOrganizerConfig().get_folder_structure())
     folder_path = os.path.expanduser(folder_path)
-    print("Current folder path: " + folder_path)
 
     create_folder(folder_path)
     return folder_path
 
 def create_note_file(file_name):
-    print("Creating file " + file_name)
     if not os.path.exists(file_name):
+        print("Creating note file " + file_name)
         note_file = open(file_name, "x")
         note_file.close()
 
