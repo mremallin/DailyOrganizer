@@ -26,13 +26,13 @@ def singleton(orig_cls):
 @singleton
 class DailyOrganizerConfig():
     def __init__(self):
-        self.settings = sublime.load_settings("daily-organizer.sublime-settings")
+        self.settings = sublime.load_settings("DailyOrganizer.sublime-settings")
 
     def get_folder_structure(self):
         return self.settings.get("folder_structure", "~/DailyOrganizer/%Y/%m/%d")
 
     def get_main_notes_file_name(self):
-        return self.settings.get("main_notes_file_name", "Organizer.txt")
+        return self.settings.get("main_notes_file_name", "Today.txt")
 
 def create_folder(folder):
     if not os.path.exists(folder):

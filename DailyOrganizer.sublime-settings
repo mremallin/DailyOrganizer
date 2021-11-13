@@ -3,5 +3,7 @@
     // Available format strings are listed here: https://docs.python.org/3.6/library/datetime.html#strftime-strptime-behavior
     "folder_structure": "~/Daily Notes/%Y/%m/%d",
     // Name of the main notes file stored in each folder
-    "main_notes_file_name": "Organizer.txt",
+    // Extensions other than txt can also be used and will automatically
+    // use the right sytax highlighter if installed (ex. Today.md for Markdown)
+    "main_notes_file_name": "Today.txt",
 }

@@ -15,18 +15,16 @@
                         "caption": "Daily Organizer",
                         "children":
                         [
-                            { "caption": "-" },
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/daily-organizer/daily-organizer.sublime-settings"},
+                                "args": {"file": "${packages}/DailyOrganizer/DailyOrganizer.sublime-settings"},
                                 "caption": "Settings – Default"
                             },
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/User/daily-organizer.sublime-settings"},
+                                "args": {"file": "${packages}/User/DailyOrganizer.sublime-settings"},
                                 "caption": "Settings – User"
                             },
-                            { "caption": "-" }
                         ]
                     }
                 ]
