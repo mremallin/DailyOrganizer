@@ -10,20 +10,6 @@ from datetime import datetime
 # - New command to create a text/markdown file with a configurable folder structure
 # - New command to create a meeting notes file within the same day
 
-def singleton(orig_cls):
-    orig_new = orig_cls.__new__
-    instance = None
-
-    @wraps(orig_cls.__new__)
-    def __new__(cls, *args, **kwargs):
-        nonlocal instance
-        if instance is None:
-            instance = orig_new(cls, *args, **kwargs)
-        return instance
-    orig_cls.__new__ = __new__
-    return orig_cls
-
-@singleton
 class DailyOrganizerConfig():
     def __init__(self):
         self.settings = sublime.load_settings("DailyOrganizer.sublime-settings")
@@ -34,13 +20,15 @@ class DailyOrganizerConfig():
     def get_main_notes_file_name(self):
         return self.settings.get("main_notes_file_name", "Today.txt")
 
+configuration = DailyOrganizerConfig()
+
 def create_folder(folder):
     if not os.path.exists(folder):
         print("Creating notes folder:" + folder)
         os.makedirs(folder)
 
 def get_current_folder():
-    folder_path = datetime.now().strftime(DailyOrganizerConfig().get_folder_structure())
+    folder_path = datetime.now().strftime(configuration.get_folder_structure())
     folder_path = os.path.expanduser(folder_path)
 
     create_folder(folder_path)
@@ -53,7 +41,7 @@ def create_note_file(file_name):
         note_file.close()
 
 def get_todays_note_file_path():
-    return (get_current_folder() + "/" + DailyOrganizerConfig().get_main_notes_file_name())
+    return (get_current_folder() + "/" + configuration.get_main_notes_file_name())
 
 class OpenTodaysNoteCommand(sublime_plugin.WindowCommand):
     def run(self):
