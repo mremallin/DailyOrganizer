@@ -1,7 +1,7 @@
 {
     // folder_structure defines the folder structure to store notes
     // Available format strings are listed here: https://docs.python.org/3.6/library/datetime.html#strftime-strptime-behavior
-    "folder_structure": "~/Daily Notes/%Y/%m/%d",
+    "folder_structure": "~/DailyOrganizer/%Y/%m/%d",
     // Name of the main notes file stored in each folder
     // Extensions other than txt can also be used and will automatically
     // use the right sytax highlighter if installed (ex. Today.md for Markdown)
