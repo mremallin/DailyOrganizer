@@ -47,6 +47,10 @@ def get_current_folder():
     create_folder(folder_path)
     return folder_path
 
+def get_current_file():
+    return datetime.now().strftime(get_main_notes_file_name())
+
+
 def create_note_file(file_name):
     if not os.path.exists(file_name):
         print("Creating note file " + file_name)
@@ -54,7 +58,7 @@ def create_note_file(file_name):
         note_file.close()
 
 def get_todays_note_file_path():
-    return (get_current_folder() + "/" + get_main_notes_file_name())
+    return (get_current_folder() + "/" + get_current_file())
 
 class OpenTodaysNoteCommand(sublime_plugin.WindowCommand):
     def run(self):
