@@ -16,4 +16,4 @@ This will prompt the user for a file name to store the new meeting minutes in th
 This is the folder layout of how to store the note files. It accepts formatting specifiers from strftime as well. (https://docs.python.org/3.6/library/datetime.html#strftime-strptime-behavior)
 
 ## main_notes_file_name
-This is the name of the singular note file in each directory.
+This is the name of the singular note file in each directory. This also accepts formatting specifiers from strftime.
