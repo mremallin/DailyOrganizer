@@ -1,0 +1,7 @@
+Thank you for installing DailyOrganizer!
+
+This is mainly a hobby project to help keep myself more organized with too many meetings in each day. I hope you find it as useful as I do!
+
+Please check out README.md (https://github.com/mremallin/DailyOrganizer) for the latest documentation for this plugin.
+
+- Mike Mallin

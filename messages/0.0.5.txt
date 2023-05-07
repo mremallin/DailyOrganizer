@@ -1,0 +1,8 @@
+# Daily Organizer
+
+New in version 0.0.5 - May 7, 2023:
+- Support for meeting templates!
+
+You can now create custom templates when creating new meeting notes. These templates are stored by default in `~/DailyOrganizer/MeetingTemplates` and are copied into newly-created meeting files.
+
+For more details please consult README.md at https://github.com/mremallin/DailyOrganizer.

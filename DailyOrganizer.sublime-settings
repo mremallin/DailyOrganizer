@@ -6,4 +6,6 @@
     // Extensions other than txt can also be used and will automatically
     // use the right sytax highlighter if installed (ex. Today.md for Markdown)
     "main_notes_file_name": "Today.txt",
+    // User-provided folder to contain templates for meetings
+    "meeting_template_folder": "~/DailyOrganizer/MeetingTemplates"
 }
